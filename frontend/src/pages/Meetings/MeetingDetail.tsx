@@ -42,7 +42,7 @@ export default function MeetingDetail() {
         <div className="card">
           <h2 className="font-semibold mb-3">Agenda</h2>
           <ol className="space-y-2">
-            {meeting.agenda.map((item: any, i: number) => <li key={i} className="flex gap-2 text-sm"><span className="font-medium text-primary-600">{i + 1}.</span><span>{typeof item === 'string' ? item : item.title || JSON.stringify(item)}</span></li>)}
+            {meeting.agenda.map((item: any, i: number) => <li key={`agenda-${i}-${typeof item === 'string' ? item.slice(0, 20) : i}`} className="flex gap-2 text-sm"><span className="font-medium text-primary-600">{i + 1}.</span><span>{typeof item === 'string' ? item : item.title || JSON.stringify(item)}</span></li>)}
           </ol>
         </div>
       )}

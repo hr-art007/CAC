@@ -28,7 +28,7 @@ export default function SurveyResults() {
           <h3 className="font-semibold mb-2">{data.question}</h3>
           <p className="text-sm text-gray-500 mb-3">{data.totalResponses} responses</p>
           <div className="space-y-1">
-            {data.answers.slice(0, 5).map((a: any, i: number) => <p key={i} className="text-sm text-gray-600 bg-gray-50 p-2 rounded">{typeof a === 'object' ? JSON.stringify(a) : String(a)}</p>)}
+            {data.answers.slice(0, 5).map((a: any, i: number) => <p key={`${qId}-answer-${i}`} className="text-sm text-gray-600 bg-gray-50 p-2 rounded">{typeof a === 'object' ? JSON.stringify(a) : String(a)}</p>)}
           </div>
         </div>
       ))}
